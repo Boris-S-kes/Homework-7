@@ -2,9 +2,10 @@ public class Main {
     public static void main(String[] args) {
 
         int firstFriday = 3;
-        for (;firstFriday<= 31;firstFriday++) {
-            if (firstFriday % 7 == 0) {
-                System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет.");
+        for (int day = 1 ;day <= 31;day ++) {
+            if((day - firstFriday) % 7 == 0) {
+
+                System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
             }
         }
         System.out.println(" track 2 ");
@@ -12,15 +13,16 @@ public class Main {
         int distance = 42195;
         int interval = 500;
         do {
-            System.out.println("Держитесь! Осталось " + distance + " метров.");
+            System.out.println("Держитесь! Осталось " + (distance - interval) + " метров.");
             distance = distance - interval;
         } while (0 <= distance);
 
         int total = 42195;
-        for (int i = 0; i <= 42195; i = i + 500) {
-            int global = total - i;
+        int distance2 = 0;
+        for (;distance2 <= total;distance2 +=500) {
+            int global = total - distance2;
             {
-                System.out.println(" Держитесь! Осталось " + global + " метров.");
+                System.out.println(" Держитесь! Осталось " + (global - distance2) + " метров.");
             }
         }
 
