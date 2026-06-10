@@ -18,13 +18,11 @@ public class Main {
         } while (0 <= distance);
 
         int total = 42195;
-        int distance2 = 0;
-        for (;distance2 <= total;distance2 +=500) {
-            int global = total - distance2;
-            {
-                System.out.println(" Держитесь! Осталось " + (global - distance2) + " метров.");
+        int distance2 = 500;
+        for (;distance2 < total;distance2 +=500) {
+                System.out.println(" Держитесь! Осталось " + (total -distance2) + " метров.");
             }
-        }
+
 
         System.out.println(" track 3 ");
         int maxBet = 300;
