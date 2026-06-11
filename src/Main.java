@@ -71,6 +71,7 @@ public class Main {
             if (minute % 10 == 0) {
                 overheats++;
                 minute++;
+                charge = charge - 2;
                 continue;
             }
             System.out.println(" Зарядка прекращена. Текущий заряд" + charge);
