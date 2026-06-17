@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
         int firstFriday = 3;
-        for (int day = 1 ;day <= 31;day ++) {
-            if((day - firstFriday) % 7 == 0) {
+        for (int day = 1; day <= 31; day++) {
+            if ((day - firstFriday) % 7 == 0) {
 
                 System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
             }
@@ -19,9 +19,9 @@ public class Main {
 
         int total = 42195;
         int distance2 = 500;
-        for (;distance2 < total;distance2 +=500) {
-                System.out.println(" Держитесь! Осталось " + (total -distance2) + " метров.");
-            }
+        for (; distance2 < total; distance2 += 500) {
+            System.out.println(" Держитесь! Осталось " + (total - distance2) + " метров.");
+        }
 
 
         System.out.println(" track 3 ");
@@ -33,14 +33,23 @@ public class Main {
             if (day % 5 == 0) {
                 continue;
             }
-            System.out.println(" количество дней " + day);
+            if (maxBet < 100) {
+                break;
+            }
+            System.out.println(" количество дней парковки " + day);
         }
         int summa = 300;
         int time = 1;
         for (; summa >= 100; time++) {
-            summa = summa - 100;
+            summa -= 100;
+            time++;
+
             if (time % 5 == 0) {
+                time++;
                 continue;
+            }
+            if (summa < 100) {
+                break;
             }
             System.out.println(" Количество дней парковки " + time);
         }
@@ -70,20 +79,19 @@ public class Main {
             charge = charge + 2;
             if (minute % 10 == 0) {
                 overheats++;
-                minute++;
-                charge = charge - 2;
                 continue;
             }
-            System.out.println(" Зарядка прекращена. Текущий заряд" + charge);
             if (overheats == 3) {
+                System.out.println("Текущий заряд" + charge);
                 break;
-            }
-        }
-                System.out.println(" Время зарядки составило " + minute +" минут ");
-
 
             }
+            System.out.println(" Время зарядки составило " + minute + " минут ");
+
+
         }
+    }
+}
 
 
 
