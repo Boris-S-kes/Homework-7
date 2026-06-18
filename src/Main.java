@@ -25,34 +25,37 @@ public class Main {
 
 
         System.out.println(" track 3 ");
-        int maxBet = 300;
+        int maxBet = 700;
         int day = 0;
-        while (maxBet >= 100) {
+        while (maxBet >= 100 || (day + 1) % 5 == 0) {
             day++;
-            maxBet = maxBet - 100;
+
             if (day % 5 == 0) {
                 continue;
             }
-            if (maxBet < 100) {
-                break;
-            }
-            System.out.println(" количество дней парковки " + day);
-        }
-        int summa = 300;
-        int time = 1;
-        for (; summa >= 100; time++) {
-            summa -= 100;
-            time++;
 
-            if (time % 5 == 0) {
+            maxBet -= 100;
+
+
+        }
+        System.out.println(" количество дней парковки " + day);
+
+
+        int summa = 700;
+        int time = 0;
+        for (; summa >= 100; ) {
+            if ((time + 1) % 5 == 0) {
                 time++;
                 continue;
             }
-            if (summa < 100) {
-                break;
-            }
+            summa -= 100;
+            time++;
+
             System.out.println(" Количество дней парковки " + time);
+
+
         }
+
         System.out.println(" track 4");
         int month = 0;
         double total2 = 0;
@@ -74,24 +77,22 @@ public class Main {
         int charge = 20;
         int minute = 0;
         int overheats = 0;
-        while (charge < 100 && overheats <= 3) {
+        while (charge < 100 && overheats < 3) {
             minute++;
-            charge = charge + 2;
+
             if (minute % 10 == 0) {
                 overheats++;
+                minute += 2;
                 continue;
             }
-            if (overheats == 3) {
-                System.out.println("Текущий заряд" + charge);
-                break;
-
-            }
-            System.out.println(" Время зарядки составило " + minute + " минут ");
-
-
+            charge += 2;
         }
+        System.out.println(" зарядка прекратилась из-за трех перегревов или завершилась успешно " + minute + " минуты заняла зарядка");
+
     }
 }
+
+
 
 
 
